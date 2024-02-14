@@ -6,12 +6,12 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:34:54 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/02/13 13:37:33 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/02/14 16:17:52 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft/libft.h"
-#include "printf/ft_printf.h"
+#include "ft_printf/ft_printf.h"
 #include "signal.h"
 #include "unistd.h"
 
@@ -24,8 +24,8 @@ void	send_signal(char **str)
 	i = 0;
 	pid = ft_atoi(str[1]);
 	if (pid < 0)
-		return (0);
-	while (str[i])
+		return ;
+	while (str[2][i])
 	{
 		j = 6;
 		while (j >= 0)
@@ -40,11 +40,9 @@ void	send_signal(char **str)
 		i++;
 	}
 }
+
 int	main(int argc, char **argv)
 {
-	if (argc == 3)
-	{
-		send_signal(argv);
-	}
+	send_signal(argv);
 	return (0);
 }
