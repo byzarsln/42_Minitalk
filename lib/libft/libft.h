@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 16:34:43 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/03/05 16:34:46 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/03/05 16:35:43 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/03/05 16:35:45 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# include "lib/ft_printf/ft_printf.h"
-# include "signal.h"
-# include "unistd.h"
+# include "stdlib.h"
 
+int					ft_atoi(const char *str);
+void				*ft_calloc(size_t num_elements, size_t element_size);
+char				*ft_itoa(int n);
 #endif

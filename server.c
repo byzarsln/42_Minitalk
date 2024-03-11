@@ -5,22 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 13:34:29 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/02/14 16:16:40 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/03/05 16:12:19 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/03/06 16:01:01 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/ft_printf.h"
-#include "signal.h"
-#include "unistd.h"
+#include "minitalk.h"
 
-void	handle(int signum)
+static void	handle(int signum)
 {
 	static char	c;
-	static int	i;
+	static int	i = 64;
 
-	i = 64;
 	if (signum == SIGUSR2)
 		c += i;
 	i >>= 1;

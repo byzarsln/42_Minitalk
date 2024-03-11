@@ -5,17 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 13:34:54 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/02/14 16:17:52 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/03/05 16:01:14 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/03/06 16:00:44 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "ft_printf/ft_printf.h"
-#include "signal.h"
-#include "unistd.h"
+#include "lib/libft/libft.h"
+#include "minitalk.h"
 
-void	send_signal(char **str)
+static void	send_signal(char **str)
 {
 	int	i;
 	int	j;
@@ -23,8 +21,8 @@ void	send_signal(char **str)
 
 	i = 0;
 	pid = ft_atoi(str[1]);
-	if (pid < 0)
-		return ;
+	if (pid < 0 && write(1, "ERROR: Wrong PID", 17))
+		exit(0);
 	while (str[2][i])
 	{
 		j = 6;
@@ -43,6 +41,11 @@ void	send_signal(char **str)
 
 int	main(int argc, char **argv)
 {
-	send_signal(argv);
+	if (argc == 3)
+	{
+		send_signal(argv);
+		return (0);
+	}
+	ft_printf("Error: invalid arguments\n./client <PID> <Message>");
 	return (0);
 }
